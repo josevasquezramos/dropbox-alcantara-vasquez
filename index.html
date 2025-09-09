@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dropbox - Almacenamiento en la Nube</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Reemplazado: uso de lucide desde CDN oficial -->
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    <style>
+        .gradient-bg {
+            background: linear-gradient(135deg, #0061ff 0%, #60a5fa 100%);
+        }
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0, 97, 255, 0.15);
+        }
+        .price-switch {
+            position: relative;
+            display: inline-block;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Header -->
+    <nav class="sticky top-0 z-50 bg-white/80 backdrop-blur-md shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <a class="flex items-center" href="index.html">
+                    <div class="flex-shrink-0">
+                        <div class="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center">
+                            <i data-lucide="cloud" class="w-5 h-5 text-white"></i>
+                        </div>
+                    </div>
+                    <div class="ml-3">
+                        <h1 class="text-xl font-bold text-gray-900">Dropbox</h1>
+                    </div>
+                </a>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-4">
+                        <a href="#plans" class="text-gray-500 hover:text-gray-900 px-3 py-2 text-sm font-medium">Planes</a>
+                        <a href="#about" class="text-gray-500 hover:text-gray-900 px-3 py-2 text-sm font-medium">Nosotros</a>
+                        <a href="#contact" class="text-gray-500 hover:text-gray-900 px-3 py-2 text-sm font-medium">Contacto</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="gradient-bg text-white py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <h1 class="text-4xl md:text-6xl font-bold mb-6">
+                    Tu nube personal.<br>
+                    <span class="text-blue-200">Siempre contigo.</span>
+                </h1>
+                <p class="text-xl md:text-2xl mb-8 text-blue-100 max-w-3xl mx-auto">
+                    Almacena, sincroniza y comparte tus archivos de forma segura desde cualquier dispositivo. 
+                    Más de 500 millones de usuarios confían en Dropbox.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <button class="bg-white text-blue-600 px-8 py-3 rounded-lg font-semibold hover:bg-blue-50 transition-colors">
+                        Comenzar gratis
+                    </button>
+                    <button class="border border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-blue-600 transition-colors">
+                        Ver demo
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">¿Por qué elegir Dropbox?</h2>
+                <p class="text-xl text-gray-600">Funciones diseñadas para tu productividad</p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="text-center">
+                    <div class="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i data-lucide="smartphone" class="w-8 h-8 text-blue-600"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Multiplataforma</h3>
+                    <p class="text-gray-600">Accede a tus archivos desde Windows, Mac, Linux, iOS, Android y navegadores web.</p>
+                </div>
+                
+                <div class="text-center">
+                    <div class="bg-green-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i data-lucide="shield-check" class="w-8 h-8 text-green-600"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Seguridad Avanzada</h3>
+                    <p class="text-gray-600">Cifrado de extremo a extremo, autenticación de dos factores y controles administrativos.</p>
+                </div>
+                
+                <div class="text-center">
+                    <div class="bg-purple-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i data-lucide="users" class="w-8 h-8 text-purple-600"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Colaboración</h3>
+                    <p class="text-gray-600">Comparte archivos, colabora en tiempo real y gestiona permisos fácilmente.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">Nosotros</h2>
+                <p class="text-xl text-gray-600">Conoce más sobre Dropbox y nuestro modelo de negocios</p>
+            </div>
+            
+            <div class="bg-gray-50 rounded-2xl p-8 mb-8">
+                <iframe width="100%" height="640" src="https://miro.com/app/live-embed/uXjVJK-99_M=/?focusWidget=3458764639843870459&embedMode=view_only_without_ui&embedId=420568392926" frameborder="0" scrolling="no" allow="fullscreen; clipboard-read; clipboard-write" allowfullscreen class="rounded-lg"></iframe>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="text-center">
+                    <div class="text-4xl font-bold text-blue-600 mb-2">500M+</div>
+                    <p class="text-gray-600">Usuarios registrados mundialmente</p>
+                </div>
+                <div class="text-center">
+                    <div class="text-4xl font-bold text-blue-600 mb-2">15+</div>
+                    <p class="text-gray-600">Años de experiencia</p>
+                </div>
+                <div class="text-center">
+                    <div class="text-4xl font-bold text-blue-600 mb-2">99.99%</div>
+                    <p class="text-gray-600">Disponibilidad del servicio</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="plans" class="py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-909 mb-4">Elige tu plan perfecto</h2>
+                <p class="text-xl text-gray-600 mb-8">Desde uso personal hasta empresas grandes</p>
+                
+                <!-- Billing Toggle -->
+                <div class="flex items-center justify-center space-x-4 mb-8">
+                    <span class="text-sm font-medium text-gray-700">Mensual</span>
+                    <label class="relative inline-flex items-center cursor-pointer">
+                        <input type="checkbox" id="billingToggle" class="sr-only peer">
+                        <div class="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-blue-600"></div>
+                    </label>
+                    <span class="text-sm font-medium text-gray-700">Anual <span class="text-green-600">(Ahorra hasta 20%)</span></span>
+                </div>
+            </div>
+
+            <!-- Traditional Plans -->
+            <div class="grid md:grid-cols-3 gap-8 mb-16">
+                <!-- Professional Plan -->
+                <div class="bg-white rounded-2xl shadow-lg p-8 card-hover">
+                    <div class="text-center">
+                        <h3 class="text-2xl font-bold text-gray-900 mb-2">Professional</h3>
+                        <p class="text-gray-600 mb-4">Para profesionales</p>
+                        <div class="mb-6">
+                            <span class="text-4xl font-bold text-blue-600">$<span id="prof-price">19.99</span></span>
+                            <span class="text-gray-500">/mes</span>
+                        </div>
+                        <div class="text-sm text-gray-600 mb-6">1 usuario</div>
+                    </div>
+                    
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-center">
+                            <i data-lucide="check" class="w-5 h-5 text-green-500 mr-3"></i>
+                            <span class="text-sm">3 TB de almacenamiento</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i data-lucide="check" class="w-5 h-5 text-green-500 mr-3"></i>
+                            <span class="text-sm">Conectado en todos los dispositivos</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i data-lucide="check" class="w-5 h-5 text-green-500 mr-3"></i>
+                            <span class="text-sm">180 días para restaurar archivos</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i data-lucide="check" class="w-5 h-5 text-green-500 mr-3"></i>
+                            <span class="text-sm">Transferencias hasta 100 GB</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i data-lucide="check" class="w-5 h-5 text-green-500 mr-3"></i>
+                            <span class="text-sm">Edición de PDF y firmas</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i data-lucide="check" class="w-5 h-5 text-green-500 mr-3"></i>
+                            <span class="text-sm">Personalización con marca</span>
+                        </li>
+                    </ul>
+                    
+                    <button class="w-full bg-blue-600 text-white py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors mb-3">
+                        Probar gratis
+                    </button>
+                    <button class="w-full border border-blue-600 text-blue-600 py-3 rounded-lg font-semibold hover:bg-blue-50 transition-colors">
+                        Comprar ahora
+                    </button>
+                </div>
+
+                <!-- Standard Plan -->
+                <div class="bg-white rounded-2xl shadow-lg p-8 card-hover border-2 border-blue-500 relative">
+                    <div class="absolute -top-4 left-1/2 transform -translate-x-1/2">
+                        <span class="bg-blue-500 text-white px-4 py-1 rounded-full text-sm font-medium">Más popular</span>
+                    </div>
+                    <div class="text-center">
+                        <h3 class="text-2xl font-bold text-gray-900 mb-2">Standard</h3>
+                        <p class="text-gray-600 mb-4">Para equipos</p>
+                        <div class="mb-6">
+                            <span class="text-4xl font-bold text-blue-600">$<span id="std-price">18</span></span>
+                            <span class="text-gray-500">/mes por usuario</span>
+                        </div>
+                        <div class="text-sm text-gray-600 mb-6">3 usuarios o más</div>
+                    </div>
+                    
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-center">
+                            <i data-lucide="check" class="w-5 h-5 text-green-500 mr-3"></i>
+                            <span class="text-sm">5 TB de almacenamiento para el equipo</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i data-lucide="check" class="w-5 h-5 text-green-500 mr-3"></i>
+                            <span class="text-sm">Todas las funciones de Professional</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i data-lucide="check" class="w-5 h-5 text-green-500 mr-3"></i>
+                            <span class="text-sm">Carpetas del equipo</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i data-lucide="check" class="w-5 h-5 text-green-500 mr-3"></i>
+                            <span class="text-sm">Gestión de uso compartido</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i data-lucide="check" class="w-5 h-5 text-green-500 mr-3"></i>
+                            <span class="text-sm">Grupos y roles</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i data-lucide="check" class="w-5 h-5 text-green-500 mr-3"></i>
+                            <span class="text-sm">Control administrativo</span>
+                        </li>
+                    </ul>
+                    
+                    <button class="w-full bg-blue-600 text-white py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors mb-3">
+                        Probar gratis
+                    </button>
+                    <button class="w-full border border-blue-600 text-blue-600 py-3 rounded-lg font-semibold hover:bg-blue-50 transition-colors">
+                        Comprar ahora
+                    </button>
+                </div>
+
+                <!-- Advanced Plan -->
+                <div class="bg-white rounded-2xl shadow-lg p-8 card-hover">
+                    <div class="text-center">
+                        <h3 class="text-2xl font-bold text-gray-900 mb-2">Advanced</h3>
+                        <p class="text-gray-600 mb-4">Para empresas</p>
+                        <div class="mb-6">
+                            <span class="text-4xl font-bold text-blue-600">$<span id="adv-price">30</span></span>
+                            <span class="text-gray-500">/mes por usuario</span>
+                        </div>
+                        <div class="text-sm text-gray-600 mb-6">3 usuarios o más</div>
+                    </div>
+                    
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-center">
+                            <i data-lucide="check" class="w-5 h-5 text-green-500 mr-3"></i>
+                            <span class="text-sm">A partir de 15 TB para el equipo</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i data-lucide="check" class="w-5 h-5 text-green-500 mr-3"></i>
+                            <span class="text-sm">Todas las funciones de Standard</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i data-lucide="check" class="w-5 h-5 text-green-500 mr-3"></i>
+                            <span class="text-sm">1 año para restaurar archivos</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i data-lucide="check" class="w-5 h-5 text-green-500 mr-3"></i>
+                            <span class="text-sm">Cifrado de extremo a extremo</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i data-lucide="check" class="w-5 h-5 text-green-500 mr-3"></i>
+                            <span class="text-sm">Gestión avanzada de claves</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i data-lucide="check" class="w-5 h-5 text-green-500 mr-3"></i>
+                            <span class="text-sm">Inicio de sesión único (SSO)</span>
+                        </li>
+                    </ul>
+                    
+                    <button class="w-full bg-blue-600 text-white py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors mb-3">
+                        Probar gratis
+                    </button>
+                    <button class="w-full border border-blue-600 text-blue-600 py-3 rounded-lg font-semibold hover:bg-blue-50 transition-colors">
+                        Comprar ahora
+                    </button>
+                </div>
+            </div>
+
+            <!-- New Pay-as-you-use Plan -->
+            <div class="bg-gradient-to-r from-purple-600 to-blue-600 rounded-2xl p-1">
+                <div class="bg-white rounded-xl p-8">
+                    <div class="text-center mb-8">
+                        <div class="bg-purple-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i data-lucide="zap" class="w-8 h-8 text-purple-600"></i>
+                        </div>
+                        <h3 class="text-3xl font-bold text-gray-900 mb-2">Dropbox Flex</h3>
+                        <p class="text-xl text-gray-600 mb-4">Nuevo: Paga solo por lo que uses</p>
+                        <div class="bg-purple-50 border border-purple-200 rounded-lg p-4 mb-6">
+                            <p class="text-purple-800 font-medium">¡Revolucionario! Solo pagas por tu consumo real</p>
+                        </div>
+                    </div>
+
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <div>
+                            <h4 class="text-lg font-semibold mb-4">Precios por Uso:</h4>
+                            <div class="space-y-3">
+                                <div class="flex justify-between items-center p-3 bg-gray-50 rounded-lg">
+                                    <span class="flex items-center">
+                                        <i data-lucide="hard-drive" class="w-5 h-5 text-gray-600 mr-2"></i>
+                                        Almacenamiento
+                                    </span>
+                                    <span class="font-semibold">$0.02/GB/mes</span>
+                                </div>
+                                <div class="flex justify-between items-center p-3 bg-gray-50 rounded-lg">
+                                    <span class="flex items-center">
+                                        <i data-lucide="download" class="w-5 h-5 text-gray-600 mr-2"></i>
+                                        Descargas
+                                    </span>
+                                    <span class="font-semibold">$0.01/GB</span>
+                                </div>
+                                <div class="flex justify-between items-center p-3 bg-gray-50 rounded-lg">
+                                    <span class="flex items-center">
+                                        <i data-lucide="cpu" class="w-5 h-5 text-gray-600 mr-2"></i>
+                                        Procesamiento
+                                    </span>
+                                    <span class="font-semibold">$0.10/min</span>
+                                </div>
+                                <div class="flex justify-between items-center p-3 bg-gray-50 rounded-lg">
+                                    <span class="flex items-center">
+                                        <i data-lucide="code" class="w-5 h-5 text-gray-600 mr-2"></i>
+                                        API Calls
+                                    </span>
+                                    <span class="font-semibold">$0.001/call</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <h4 class="text-lg font-semibold mb-4">Servicios Incluidos:</h4>
+                            <ul class="space-y-3">
+                                <li class="flex items-center">
+                                    <i data-lucide="check" class="w-5 h-5 text-green-500 mr-3"></i>
+                                    <span class="text-sm">5GB gratis mensualmente</span>
+                                </li>
+                                <li class="flex items-center">
+                                    <i data-lucide="check" class="w-5 h-5 text-green-500 mr-3"></i>
+                                    <span class="text-sm">50GB de descargas gratis/mes</span>
+                                </li>
+                                <li class="flex items-center">
+                                    <i data-lucide="check" class="w-5 h-5 text-green-500 mr-3"></i>
+                                    <span class="text-sm">Dropbox Compute (procesamiento)</span>
+                                </li>
+                                <li class="flex items-center">
+                                    <i data-lucide="check" class="w-5 h-5 text-green-500 mr-3"></i>
+                                    <span class="text-sm">Analytics avanzados</span>
+                                </li>
+                                <li class="flex items-center">
+                                    <i data-lucide="check" class="w-5 h-5 text-green-500 mr-3"></i>
+                                    <span class="text-sm">Backup automático inteligente</span>
+                                </li>
+                                <li class="flex items-center">
+                                    <i data-lucide="check" class="w-5 h-5 text-green-500 mr-3"></i>
+                                    <span class="text-sm">Facturación transparente</span>
+                                </li>
+                            </ul>
+
+                            <div class="mt-6">
+                                <button class="w-full bg-purple-600 text-white py-3 rounded-lg font-semibold hover:bg-purple-700 transition-colors mb-3">
+                                    Comenzar gratis
+                                </button>
+                                <p class="text-sm text-gray-600 text-center">Perfecto para usuarios que quieren pagar solo lo que usan</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center mb-4">
+                        <div class="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center mr-3">
+                            <i data-lucide="cloud" class="w-5 h-5 text-white"></i>
+                        </div>
+                        <h3 class="text-xl font-bold">Dropbox</h3>
+                    </div>
+                    <p class="text-gray-400">Tu nube personal. Siempre contigo.</p>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Producto</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-white">Planes</a></li>
+                        <li><a href="#" class="hover:text-white">Empresas</a></li>
+                        <li><a href="#" class="hover:text-white">Desarrolladores</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Soporte</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-white">Centro de ayuda</a></li>
+                        <li><a href="#" class="hover:text-white">Contacto</a></li>
+                        <li><a href="#" class="hover:text-white">Estado del servicio</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Empresa</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-white">Acerca de</a></li>
+                        <li><a href="#" class="hover:text-white">Trabajos</a></li>
+                        <li><a href="#" class="hover:text-white">Privacidad</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2024 Dropbox. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Solución: Inicializar Lucide después de que el DOM esté cargado
+        document.addEventListener('DOMContentLoaded', function() {
+            // Inicializar iconos de Lucide
+            lucide.createIcons();
+            
+            // Definir pricing antes de cualquier función que lo use
+            const pricing = {
+                monthly: {
+                    professional: 19.99,
+                    standard: 18,
+                    advanced: 30
+                },
+                annual: {
+                    professional: 16.58,
+                    standard: 15,
+                    advanced: 24
+                }
+            };
+
+            // Asignar evento al toggle después de que exista
+            document.getElementById('billingToggle').addEventListener('change', toggleBilling);
+            
+            function toggleBilling() {
+                const toggle = document.getElementById('billingToggle');
+                const isAnnual = toggle.checked;
+                const priceType = isAnnual ? 'annual' : 'monthly';
+                
+                document.getElementById('prof-price').textContent = pricing[priceType].professional.toFixed(2);
+                document.getElementById('std-price').textContent = pricing[priceType].standard;
+                document.getElementById('adv-price').textContent = pricing[priceType].advanced;
+            }
+
+            // Smooth scrolling for navigation links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+
+            // Add some interactive animations
+            const cards = document.querySelectorAll('.card-hover');
+            cards.forEach(card => {
+                card.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-8px)';
+                });
+                
+                card.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(0)';
+                });
+            });
+        });
+    </script>
+</body>
+</html>
